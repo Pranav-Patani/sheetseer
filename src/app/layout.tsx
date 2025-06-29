@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Data Alchemist",
+  title: "Sheetseer",
   description: 'Data was a mess, "was" because now we are here ;)',
 };
 
