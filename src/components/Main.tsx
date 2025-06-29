@@ -18,6 +18,7 @@ import ValidationSummary from "./ValidationSummary";
 import BusinessRulesPanel from "./BusinessRulesPanel";
 import { useAppContext } from "@/components/context/AppContext";
 import type { TabType } from "./types";
+import type { ValidationError } from "@/utils/dataProcessing";
 
 export default function Main() {
   const { state, dispatch } = useAppContext();
@@ -34,7 +35,7 @@ export default function Main() {
 
       try {
         const rawData = await parseFile(file);
-        let newErrors = [];
+        let newErrors: ValidationError[] = [];
 
         if (type === "clients") {
           const { clients, errors } = validateClients(rawData);
